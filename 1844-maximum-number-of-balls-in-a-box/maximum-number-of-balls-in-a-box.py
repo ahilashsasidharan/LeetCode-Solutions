@@ -4,17 +4,19 @@ class Solution:
         mostBalls = 0
 
         for i in range(lowLimit, highLimit + 1):
-            dig = str(i)
-            digSum = 0
-            for c in dig:
-                digSum += int(c)
             
-            temp = dictOfBalls.get(digSum, 0) + 1
-            dictOfBalls[digSum] = temp
+            # Retrieve 
+            digitSum = 0
+            n = i
+            while n:
+                digitSum += n % 10
+                n //= 10
+            
+            # Add and get value from dictionary
+            dictOfBalls[digitSum] = dictOfBalls.get(digitSum, 0) + 1
 
-            if mostBalls < temp:
-                mostBalls = temp
+            # Update mostBalls Value 
+            if mostBalls < dictOfBalls[digitSum] :
+                mostBalls = dictOfBalls[digitSum] 
 
         return mostBalls
-
-        
