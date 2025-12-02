@@ -15,7 +15,8 @@ class Solution:
         currBalls = 0
         prev = 0
 
-
+        # Backward pass through the boxes
+        # Add the # of operations to move all balls right of current box into the current box calculated on the fly 
         for i in range(len(boxes) - 1, -1, -1):
             prev += currBalls
             result[i] += prev
