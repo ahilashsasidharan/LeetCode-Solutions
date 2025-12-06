@@ -13,11 +13,7 @@ public:
         int jumps = 0;
         int maxJmpRange = nums[0];
 
-        if(nums.size() == 1){
-            return jumps;
-        }
-
-        for(int i = 0; i < nums.size(); i++){
+        for(int i = 1; i < nums.size(); i++){
             if(maxJmpRange < i){
                 maxJmpRange = reach;
                 reach = 0;
