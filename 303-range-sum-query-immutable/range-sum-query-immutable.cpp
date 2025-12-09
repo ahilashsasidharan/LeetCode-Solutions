@@ -1,10 +1,8 @@
 class NumArray {
 public:
-    vector<int> nums;
     vector<int> prefixes;
 
     NumArray(vector<int>& nums) {
-        this->nums = nums;
         int sum = 0;
         prefixes.push_back(0);
         for(int i = 0; i < nums.size(); i++){
