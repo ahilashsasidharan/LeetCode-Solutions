@@ -19,8 +19,6 @@ public:
             int tDays = 0;
             long int currShip = 0;
 
-            cout << mp << endl;
-
             for(int w : weights){
                 if(currShip + w <= mp){
                     currShip += w;
