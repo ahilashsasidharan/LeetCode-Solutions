@@ -22,11 +22,11 @@ public:
 
             if(*it < 0){
                 if(posProd == 0){
-                    if(negProd == 0) negProd = *it;
-                    else{
+                    // if(negProd == 0) negProd = *it;
+                    // else{
                         posProd = *it * negProd;
                         negProd = *it;
-                    }
+                    // }
                 }
                 else if(negProd == 0){
                     negProd = posProd * (*it);
