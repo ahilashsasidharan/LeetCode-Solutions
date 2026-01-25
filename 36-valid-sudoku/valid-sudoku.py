@@ -19,11 +19,11 @@ class Solution:
                 vals.add(cell)
 
         # Check 3 x 3 Grids
-        for hgrid in range(int((len(board[0]) + 1) / 3)):
-            for vgrid in range(int((len(board) + 1) / 3)):
+        for hgrid in range(0, int(len(board[0])), 3):
+            for vgrid in range(0, int((len(board))), 3):
                 vals = set()
-                for hind in range(hgrid * 3, hgrid * 3 + 3):
-                    for vind in range(vgrid * 3, vgrid * 3 + 3):
+                for hind in range(hgrid, hgrid + 3):
+                    for vind in range(vgrid, vgrid + 3):
                         cell = board[vind][hind]
                         if cell in vals and cell != ".":
                             return False
