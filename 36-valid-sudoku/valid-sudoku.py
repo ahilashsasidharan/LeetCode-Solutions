@@ -11,18 +11,20 @@ class Solution:
             grids[i] = set()
 
         for row in range(len(board)):
-            vals = set()
             for col in range(len(board[0])):
                 grid = int(row / 3) + 3 * int(col / 3)
                 cell = board[row][col]
                 
-                if cell in rows[row] and cell != ".":
+                if cell == ".":
+                    continue
+
+                if cell in rows[row]:
                     return False
                 
-                if cell in cols[col] and cell != ".":
+                if cell in cols[col]:
                     return False
                 
-                if cell in grids[grid] and cell != ".":
+                if cell in grids[grid]:
                     return False
 
                 rows[row].add(cell)
