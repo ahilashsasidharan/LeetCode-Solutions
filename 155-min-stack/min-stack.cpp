@@ -11,13 +11,12 @@ public:
     }
     
     void push(int value){
-
         if (stack.size() == 0)
             stack.emplace_back(value, value);
-        else if (stack[stack.size() - 1].second < stack[stack.size() - 1].first)
-            stack.emplace_back(value, stack[stack.size() - 1].second);
-        else
-            stack.emplace_back(value, stack[stack.size() - 1].first);
+        else {
+            int min = std::min(value, stack.back().second);
+            stack.emplace_back(value, min);
+        }
     }
     
     void pop() {
@@ -25,17 +24,11 @@ public:
     }
     
     int top() {
-        return stack[stack.size() - 1].first;
+        return stack.back().first;
     }
     
     int getMin() {
-        int prevEl = stack[stack.size() - 1].first;
-        int min = stack[stack.size() - 1].second;
-
-        if (min < prevEl)
-            return min;
-        else
-            return prevEl;
+        return stack.back().second;
     }
 };
 
