@@ -7,6 +7,8 @@ public:
             right = right >> 1;
             count++;
         }
-        return left << count;
+        // return left << count;
+        // or
+        return left * std::pow(2, count);
     }
 };
