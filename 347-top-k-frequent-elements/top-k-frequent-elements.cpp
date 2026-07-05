@@ -21,8 +21,6 @@ public:
             bucket[value].push_back(key);
         }
 
-        cout << "got here" << endl;
-
         // pull from the largest bucket for k number of elements
         for(int i = nums.size(); (i >= 0) && res.size() < k; i--){
             for(int j = 0; (j < bucket[i].size()) && res.size() < k; j++){
