@@ -25,6 +25,14 @@ public:
 
         // bit = bit << shift;
 
+        // Need to convert to unsigned int for the edge case mentioned above
+        // Since the value of -2^31 turned positive couldn't be held by an int (signed)
+        // Based on compiler implementation this might cause issues when you have 2^31
+        // being the LSB because it needs to be converted back to int which is not 
+        // defined in the C++ standard 
+        // now that the left side has an implicit conversion to unsigned int 
+        // during the & between the two numbers
+
         int lsb = 0;
 
         lsb = xorRes & -(unsigned int)xorRes;
