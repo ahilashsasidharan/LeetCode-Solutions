@@ -14,13 +14,9 @@ public:
             LP++;
         }
 
-        cout << LP << endl;
-
         while(RP > 0 && nums[RP] >= nums[RP - 1]){
             RP--;
         }
-
-        cout << RP << endl;
 
         if(LP >= RP) return 0;
 
@@ -33,9 +29,6 @@ public:
                 RP++;
             }
         }
-
-        cout << LP << endl;
-        cout << RP << endl;
 
         return RP - LP - 1;
     }
