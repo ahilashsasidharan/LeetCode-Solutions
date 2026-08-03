@@ -18,9 +18,6 @@ public:
             rightBound--;
         }
 
-        cout << "rb: " << rightBound << endl;
-        cout << "lb: " << leftBound << endl; 
-
         // Scan between the calculate bounds to find pockets of water
 
         int lp = leftBound;
@@ -50,18 +47,11 @@ public:
                 maxL = height[lp];
                 lp++;
 
-                cout << maxL << endl;
-                cout << height[rp] << endl;
-                cout << "RP: " << rp << endl;
-
                 while(lp < rp){
                     if(height[lp] > std::min(maxL, height[rp])){
                         lp++;
                         continue;
                     }
-                    cout << water << endl;
-                    cout << "LP: " << lp << endl;
-                    cout << "RP: " << rp << endl;
                     water += std::min(maxL, height[rp]) - height[lp];
                     lp++;
                 }
